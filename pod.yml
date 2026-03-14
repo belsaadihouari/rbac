@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod
+  namespace: default
+spec:
+  serviceAccountName: sa1
+  containers:
+    - name: pod1
+      image: bitnami/kubectl
+      command: ["/bin/sh", "-c"]
+      args:
+        - |
+          echo "Tentative de création d'un pod enfant..."
+          kubectl run pod-enfant --image=nginx
+          echo "Vérification :"
+          kubectl get pods
+          sleep 3600
