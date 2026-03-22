@@ -1,0 +1,13 @@
+livenessProbe:
+  httpGet:
+    path: /healthz
+    port: 8080
+    scheme: HTTP
+    httpHeaders:
+      - name: X-Custom-Header
+        value: Awesome
+  initialDelaySeconds: 10
+  periodSeconds: 5
+  timeoutSeconds: 2
+  successThreshold: 1
+  failureThreshold: 3
