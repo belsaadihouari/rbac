@@ -4,10 +4,6 @@ livenessProbe:
 
 
 
-
-
-
-
     path: /healthz
     port: 8080
     scheme: HTTP
